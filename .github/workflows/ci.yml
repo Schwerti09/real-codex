@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install -r requirements.txt pytest pytest-cov bandit
+      - name: Run tests
+        run: pytest tests/ --cov=drone_fleet --cov-report=term
+      - name: Security scan
+        run: bandit -r drone_fleet -lll
+      - name: Ensure emergency logs created
+        run: |
+          test -f logs/emergency_log.jsonl && grep -q 'low_battery' logs/emergency_log.jsonl
