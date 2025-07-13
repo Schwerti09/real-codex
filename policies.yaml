@@ -1,0 +1,7 @@
+admin:
+  rotate_key: allow
+  create_key: allow
+  revoke_key: allow
+user:
+  rotate_key: deny
+  create_key: deny
