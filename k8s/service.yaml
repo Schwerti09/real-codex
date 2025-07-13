@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: codex-bioreactor
+spec:
+  type: ClusterIP
+  selector:
+    app: codex-bioreactor
+  ports:
+    - port: 80
+      targetPort: 8000
