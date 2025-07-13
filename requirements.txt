@@ -1,0 +1,23 @@
+# Core
+numpy==1.26.4
+pandas==2.2.2
+gymnasium==0.28.1
+stable-baselines3==2.3.0
+torch>=2.2,<2.3
+pqcrypto==0.7.1
+# RL & Transformer models
+transformers==4.42.2
+accelerate==0.30.0
+# Other dependencies
+fastapi
+uvicorn
+paho-mqtt
+kafka-python
+dash
+plotly
+web3
+passlib
+requests
+prometheus-client
+# Optional GPU
+--extra-index-url https://download.pytorch.org/whl/cu121
