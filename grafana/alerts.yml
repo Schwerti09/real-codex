@@ -1,0 +1,8 @@
+# Sample Prometheus alert rules
+- alert: HighRateLimitErrors
+  expr: api_requests_total{error_code="429"} > 5
+  for: 1m
+  labels:
+    severity: warning
+  annotations:
+    summary: High rate limit errors detected

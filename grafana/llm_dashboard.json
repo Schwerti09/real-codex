@@ -1,0 +1,12 @@
+{
+  "dashboard": {
+    "title": "LLM Metrics",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "LLM Latency",
+        "targets": [{"expr": "llm_latency_seconds"}]
+      }
+    ]
+  }
+}
